@@ -6,15 +6,12 @@ on:
     branches: [ "main" ]
   workflow_dispatch:
 
-# Required permissions for GitHub Pages deployment (least privilege)
-# - pages:write + id-token:write are needed by actions/deploy-pages
-# - contents:read is enough for checkout
+# Least-privilege permissions for Pages deploy
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Prevent overlapping deployments
 concurrency:
   group: "pages"
   cancel-in-progress: true
@@ -30,72 +27,62 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # --- Compile LaTeX to PDF ---
+      # 1) Compile LaTeX → PDF
       - name: Compile LaTeX (cv.tex → cv.pdf)
         uses: xu-cheng/latex-action@v4
         with:
           root_file: cv.tex
-          # uncomment if you use fonts that require XeLaTeX
+          # If you use fonts that require XeLaTeX, uncomment:
           # latexmk_use_xelatex: true
 
-      # --- Prepare website files in ./dist ---
+      # 2) Prepare static site content
       - name: Prepare site
         run: |
-          mkdir -p dist
-          # move the freshly built PDF into the site folder
+          rm -rf dist && mkdir -p dist
           cp cv.pdf dist/cv.pdf
-
-          # create index.html that displays the PDF and provides a download link
-          cat > dist/index.html << 'HTML'
-          <!DOCTYPE html>
-          <html lang="en">
-            <head>
-              <meta charset="utf-8" />
-              <meta name="viewport" content="width=device-width, initial-scale=1" />
-              <title>CV — Alice Balard</title>
-              <style>
-                html, body { height: 100%; margin: 0; }
-                .wrap { min-height: 100vh; display: flex; flex-direction: column; }
-                .viewer { flex: 1 1 auto; }
-                .footer { padding: 1rem; text-align: center; font: 16px/1.4 system-ui, sans-serif; }
-                .btn {
-                  display: inline-block; padding: .6rem 1rem; border-radius: 6px;
-                  background: #0969da; color: #fff; text-decoration: none;
-                }
-              </style>
-            </head>
-            <body>
-              <div class="wrap">
-                <!-- Inline PDF viewer -->
-                <div class="viewer">
-                  <object
-                    data="cv.pdf#view=FitH"
-                    type="application/pdf"
-                    width="100%"
-                    height="100%">
-                    <iframe src="cv.pdf#view=FitH" width="100%" height="100%"></iframe>
-                    <!-- Fallback -->
-                    <p style="padding:1rem">
-                      Your browser can’t display PDFs inline.
-                      Please <a href="cv.pdf">download the CV</a>.
-                    </p>
-                  </object>
+          # If you committed site/index.html (recommended), copy it:
+          if [ -f site/index.html ]; then cp site/index.html dist/index.html; else
+            # Minimal fallback index if you didn't commit one yet
+            cat > dist/index.html << 'HTML'
+            <!doctype html>
+            <html lang="en">
+              <head>
+                <meta charset="utf-8"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1"/>
+                <title>CV — Alice Balard</title>
+                <style>
+                  html,body{height:100%;margin:0}
+                  .wrap{min-height:100vh;display:flex;flex-direction:column}
+                  .viewer{flex:1 1 auto}
+                  .footer{padding:1rem;text-align:center;font:16px/1.4 system-ui,sans-serif}
+                  .btn{display:inline-block;padding:.6rem 1rem;border-radius:6px;background:#0969da;color:#fff;text-decoration:none}
+                </style>
+              </head>
+              <body>
+                <div class="wrap">
+                  <div class="viewer">
+                    <object data="cv.pdf#view=FitH" type="application/pdf" width="100%" height="100%">
+                      <p style="padding:1rem">Your browser can’t display PDFs inline. Please
+                        <a href="cv.pdf" download>download the CV</a>.
+                      </p>
+                    </object>
+                  </div>
+                  <div class="footer">
+                    <a class="btn" href="cv.pdf" download>📄 Download CV (PDF)</a>
+                  </div>
                 </div>
+              </body>
+            </html>
+            HTML
+          fi
 
-                <!-- Download button -->
-                <div class="footer">
-                  <a class="btn" href="cv.pdf" download>📄 Download CV (PDF)</a>
-                </div>
-              </div>
-            </body>
-          </html>
-          HTML
-
-      # --- Upload the site as a Pages artifact ---
-             with:
+      # 3) Upload artifact for Pages
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
           path: dist
 
-      # --- Deploy to GitHub Pages ---
+      # 4) Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deploy
         uses: actions/deploy-pages@v4
