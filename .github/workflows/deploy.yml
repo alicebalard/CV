@@ -14,21 +14,23 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
+
+      - name: Ensure output directory exists
+        run: mkdir -p output        # create the folder before TeX writes to it
 
       - name: Set up LaTeX
-        uses: xu-cheng/latex-action@v2
+        uses: xu-cheng/latex-action@v4
         with:
           root_file: alice-balard-resume.tex
           compiler: xelatex
-          args: -output-directory=output  # Specify output directory
+          args: -interaction=nonstopmode -halt-on-error -output-directory=output
 
       - name: Copy index.html to output
         run: cp index.html output/index.html  # Copy index.html to output directory
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages (gh-pages branch)
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: $
-          publish_dir: ./output  # Directory containing your compiled PDF
-          destination_dir: ./  # Directory where the site will be hosted
+          github_token: ${{ secrets.GITHUB_TOKEN }}   # fix token
+          publish_dir: ./output
