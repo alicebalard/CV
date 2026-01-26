@@ -1,36 +1,51 @@
-name: Compile LaTeX document
+
+name: Build CV and deploy Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
+  workflow_dispatch:
 
+# Required permissions for official Pages deploy
 permissions:
-  contents: write  # Explicitly set the permission for the GITHUB_TOKEN
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Ensure output directory exists
-        run: mkdir -p output        # create the folder before TeX writes to it
+      - run: mkdir -p dist
 
-      - name: Set up LaTeX
+      - name: Compile LaTeX
         uses: xu-cheng/latex-action@v4
         with:
           root_file: alice-balard-resume.tex
           compiler: xelatex
-          args: -interaction=nonstopmode -halt-on-error -output-directory=output
+          args: -interaction=nonstopmode -halt-on-error -output-directory=dist
 
-      - name: Copy index.html to output
-        run: cp index.html output/index.html  # Copy index.html to output directory
+      - name: Add site files
+        run: |
+          cp index.html dist/index.html
+          touch dist/.nojekyll
 
-      - name: Deploy to GitHub Pages (gh-pages branch)
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}   # fix token
-          publish_dir: ./output
+          path: dist
+
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
+
