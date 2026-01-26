@@ -3,7 +3,7 @@ name: Compile LaTeX document
 on:
   push:
     branches:
-      - master
+      - main
 
 permissions:
   contents: write  # Explicitly set the permission for the GITHUB_TOKEN
