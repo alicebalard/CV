@@ -1,0 +1,247 @@
+%%%%%%%%%%%%%%%%% PREAMBLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Change the font size of your document - 10pt, 12.1pt, etc.
+\documentclass[letterpaper,11pt,oneside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{fontawesome5} %for cool icons
+\usepackage{multicol}
+\usepackage[skins]{tcolorbox}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+    }
+
+\usepackage{graphicx}
+\graphicspath{ {images/}} %upload your signature to this file
+%Change the margins to fit your CV/resume content
+\usepackage[left=.5in, right=.5in, bottom=.1in, top=.4in]{geometry}
+
+%Changes the page numbers - {arabic}=arabic numerals, {gobble}=no page numbers, {roman}=Roman numerals
+\pagenumbering{gobble}
+
+%%%%%%%%%%%%%%%%% END OF PREAMBLE %%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%% NAME OF APPLICANT %%%%%%%%%%%%%%%%%%%
+\noindent  \Large{\textbf{Alice BALARD, PhD, DVM}} \\
+\vspace{-3ex} 
+\normalsize
+
+%%%%%%%%%%%%%%%%% CONTACT INFORMATION %%%%%%%%%%%%%%%%%
+\begin{multicols}{2}
+  \begin{tcolorbox}[enhanced, width=\linewidth, left, size=fbox, 
+                    fontupper=\large, drop shadow southwest, colback=teal!15!white]
+    \textbf{Research fields and interests} \\
+    Molecular ecology \& evolution \\
+    Biostatistics - DNA methylation \\
+    \faIcon{dna} multi-omics
+  \end{tcolorbox}
+
+  \begin{tcolorbox}[enhanced, width=\linewidth, left, size=fbox, 
+                    fontupper=\large, drop shadow southwest, colback=teal!15!white]
+    \faIcon{envelope} \href{mailto:alice.cam.balard@gmail.com}{alice.cam.balard@gmail.com} \\
+    \faIcon{orcid} \href{https://orcid.org/0000-0002-0942-7479}{alice-balard-276b7974/}\\
+    \faIcon{github} \href{https://www.github.com/alicebalard}
+    {github.com/alicebalard}\\
+    \includegraphics[height=1em]{butterfly.png}
+ \href{https://bsky.app/profile/alicebalard.bsky.social}
+    {alicebalard.bsky.social}
+  \end{tcolorbox}
+\end{multicols}
+
+  \begin{tcolorbox}[enhanced, width=\linewidth, left, size=fbox, 
+                    fontupper=\large, drop shadow southwest, colback=teal!15!white]
+    \textbf{\faIcon{laptop}} R: data management, statistical analysis, -omics; Shell (bash): -omics; \LaTeX \\
+    \faIcon{language} French (fluent), English (fluent), German (B2)
+  \end{tcolorbox}
+  
+\vspace{.1em}
+
+%%%%%%%%%%%%%%%%% MAIN BODY %%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The main body is contained in a tabular environment. To move sections onto the next page, simply end the tabular environment and begin a new tabular environment.
+
+\noindent \begin{tabular}{@{} l p{0.95\linewidth}}
+
+\Large{\faIcon{briefcase}}    & \textcolor{teal}{\textbf{PROFESSIONAL EXPERIENCE}} \\\vspace{-6pt}
+     & \\
+     & \textbf{Research Fellow (2024 - actual)} University College London (London, UK) \\
+     & \textit{Interindividual DNA methylation variation} \\\vspace{-6pt}
+     & \\
+     & \textbf{Teaching Fellow (2023 - 2024)} Queen Mary University of London (London, UK) \\
+     & \textit{Biology, bioinformatics, statistics} \\\vspace{-6pt}
+     & \\
+     & \textbf{Data Scientist (2023)} Biomodal (London, UK) \\
+     & \textit{Customer collaboration for a new methylation sequencing technology} \\\vspace{-6pt}
+     & \\
+     & \textbf{Research fellow - Biostatistician (2023)} London School of Hygiene \& Tropical Medicine (London, UK) \\
+     & \textit{Analyses of longitudinal data on Myalgic Encephalomyelitis / Chronic Fatigue Syndrome} \\\vspace{-6pt}
+     & \\
+     & \textbf{MSCA Individual Research Fellow (2021 - 2023)} Queen Mary University of London (London, UK) \\
+     & \textit{DNA methylation inheritance in response to parasite infection in the three-spined stickleback} \\\vspace{-6pt}
+     & \\
+     & \textbf{PhD Student (2016 - 2021)} Humboldt University \& IZW (Berlin, Germany) \\
+     & \textit{Resistance and tolerance to \textit{Eimeria} in the European house mouse hybrid zone} \\\vspace{-6pt}
+     & \\
+     & \textbf{Research technician (2015)} Länderinstitut für Bienenkunde (Berlin, Germany) \\
+     & \textit{Infection of honeybees and bumblebees with Nosema ceranae, a deadly emerging parasite of bees} \\\vspace{-6pt}
+     & \\
+     & \textbf{Research technician (2014)} University of Liverpool (Liverpool, UK) \\
+     & \textit{Triclabendazole resistance in \textit{Fasciola hepatica} (liver fluke)} \\\vspace{-6pt}
+     & \\
+     & \textbf{Volunteer lab/field assistant (2013)} Robert Koch Institute (Berlin, Germany and Taï forest, Ivory Coast) \\
+     & \textit{“Great Ape Health Monitoring” project. Field work, DNA extraction, routine diagnostic PCR} \\\vspace{-6pt}
+     & \\
+     & \textbf{Intern (2012-2013)} National Museum of Natural History (Paris, France) \\
+     & \textit{Population genetics \& morphometry of the European earwig} \\\vspace{-6pt}
+     & \\
+\Large{\faIcon{graduation-cap}} & \textcolor{teal}{\textbf{EDUCATION}} \\\vspace{-6pt}   
+     & \\
+     & \textbf{PhD in biomedical sciences (2016 – 2021)} \textit{magna cum laude}\\
+     & Freie Universität Berlin (Berlin, Germany) \\
+     & Thesis: \href{https://refubium.fu-berlin.de/handle/fub188/29547}{Resistance and tolerance to \textit{Eimeria} in the European house mouse hybrid zone} \\\vspace{-6pt}
+     & \\
+     & \textbf{MSc speciality Biology, Health, Ecology (2013)} \\
+     & École Pratique des Hautes Études (Paris, France) \\\vspace{-6pt}
+     & \\
+     & \textbf{Veterinarian Doctorate (2008 – 2013)} \textit{First Class Honours}\\
+     & École Nationale Vétérinaire d’Alfort (Maisons-Alfort, France) \\
+     & Thesis: \href{https://theses.vet-alfort.fr/telecharger.php?id=1855}{Phylogeny, differentiation and speciation, example of the European earwig (\textit{Forficula auricularia})}
+\end{tabular}
+    
+\newpage
+
+\noindent \begin{tabular}{@{} l p{0.95\linewidth}}
+\Large{ \faIcon{award}} & \textcolor{teal}{\textbf{AWARDS \& FUNDINGS}} \\\vspace{-6pt}
+     & \\
+     & \textbf{Associate Fellowship of the Higher Education Academy (2025)}\\
+     & \\
+     & \textbf{Marie Skłodowska-Curie Individual Fellowship, European Commission (2021)}\\
+     & Molecular trade-offs between adaptation to salinity and immunity in three-spined sticklebacks \\\vspace{-6pt} 
+     & \\
+     & \textbf{Walter Benjamin Programme, Deutsche Forschungsgemeinschaft (2021)}(obtained but declined)\\
+     & Molecular trade-offs between adaptation to salinity and immunity in three-spined sticklebacks \\\vspace{-6pt} 
+     & \\
+     & \textbf{£200 student travel grant for the BSP Spring Meeting (2019)}\\
+     & British Society for Parasitology \\\vspace{-6pt} 
+     & \\
+      & \textbf{Veterinary dissertation prize: bronze medal (2014)}\\
+     & École Nationale Vétérinaire d’Alfort (Maisons-Alfort, France) \\
+     & \\
+\Large{\faIcon{users}} & \textcolor{teal}{\textbf{TEACHING EXPERIENCE}} \\\vspace{-6pt}     
+     & \\
+     & \textbf{Teaching during postdoc in UCL, UK (2025)}\\
+     & \parbox{7.0in}{BIOL0003 Introduction to Genetics (1h)} \\\vspace{-6pt} 
+     & \parbox{7.0in}{BIOL0058 Core skills Y3 (1h)} \\\vspace{-6pt}  & \\
+     & \parbox{7.0in}{GENE0006 Understanding Bioinformatics Resources and Their Application Level 7 (1h)} \\\vspace{-6pt} 
+     & \\
+     & \textbf{Teaching fellow, QMUL, UK (2023 - 2024)}\\
+     & \parbox{7.0in}{Delivered lectures on statistics, bioinformatics and fundamental biology in several modules across levels 4 to 7 ("Diversity and Ecology", "Practical molecular and cellular biology", "Research method and communication", "Coding and data science", etc.). 
+     Module organiser and delivery of Missing Biological Data Team Challenge in "AI in the Biosciences" level 7} \\\vspace{-6pt} 
+     & \\
+     & \textbf{R for complete beginners workshop, QMUL, UK (2021 - 2023)}\\
+     & \parbox{7.0in}{14 hours of gained teaching experience. PhD students, postdocs, and other research staff} \\\vspace{-6pt} 
+     & \\
+     & \textbf{Attend “Train the trainer” programme, QMUL, UK  (2021)}\\
+     & \parbox{7.0in}{Postdocs training to design and deliver courses to doctoral students} \\\vspace{-6pt} 
+     & \\
+     & \textbf{Students supervisions}\\
+     & \parbox{7.0in}{2025 Supervision of a 2nd year undergraduate summer student's project, UCL, UK} \\
+     & \parbox{7.0in}{2022 Supervision of MSc thesis, QMUL, UK} \\
+     & \parbox{7.0in}{2016-2019 Supervision of four BSc theses, Humboldt University Berlin, Germany} \\\vspace{-6pt} 
+     & \\
+\Large{\faIcon{cogs}} & \textcolor{teal}{\textbf{CONTRIBUTION TO DISCIPLINE}} \\\vspace{-6pt}  
+     & \\
+     & \textbf{Peer reviews}\\
+     & \parbox{7.0in}{Molecular Ecology (4), Marine Biology (2), Ecology \& Evolution (1), Proceedings of The Royal Society B: Biological Sciences (1); Grant review for the Czech Science Foundation} \\\vspace{-6pt}
+      & \\
+      & \textbf{Co-organisation of an \href{https://evoepijc.wixsite.com/epigenetics-journal}{online international journal club on epigenetics} (2021 – today)}\\\vspace{-6pt}
+      & \\
+      & \textbf{Guest editor for a \href{https://onlinelibrary.wiley.com/doi/toc/10.1111/(ISSN)1752-4571.potential-of-wild-populations}{special issue in Evolutionary Application}} (2024)\\\vspace{-6pt}
+      & \\
+      & \textbf{Conferences \&  workshops (co)organised}\\
+     & \parbox{7.0in}{Symposium “The molecular carol: past, present and future of molecular tools in Conservation Biology”, ECCB Bologna (Italy)(2024)}\\\vspace{-6pt}
+      & \\      
+      & \parbox{7.0in}{Symposium “Epigenetics goes wild! Epigenetic diversity and the evolutionary potential of wild populations”, ESEB Congress Pragues (Czech Republic)(2022)}\\\vspace{-6pt}
+      & \\
+      & \parbox{7.0in}{QMUL SBBS PDRA Summer Symposium 2022, London (UK) (27-28 June 2022)} \\\vspace{-6pt}
+            & \\
+      & \parbox{7.0in}{Organisation of "Philosophy of science for biologists - Theory of science in relation to evolution", Berlin (Germany) \href{https://www.zibi-berlin.de/events/other/philosophy-of-science.html}{(14-15 March 2018)} and 2 x "Introduction to evolutionary biology for infection biologists", Berlin (Germany) (\href{https://www.vetmed.fu-berlin.de/en/einrichtungen/sonstige/grk2046/_downloads/0_-GRK2046-News/Evolutionary-Workshop-May-2016.pdf}{12-13 May 2016}) \& (\href{https://www.vetmed.fu-berlin.de/en/einrichtungen/sonstige/grk2046/news/ws-evolutionary-biology-2017.pdf}{15-16 May 2017)
+      })} \\\vspace{-6pt}
+      \end{tabular}
+\newpage
+
+\noindent \begin{tabular}{@{} l p{0.95\linewidth}}
+      & \textbf{Administrative engagement}\\
+      & \parbox{7.0in}{PDRA representative for the department of Biology, SBBS, QMUL, London, UK (2022)}
+      \\      
+      & \parbox{7.0in}{Part of \href{https://www.ucl.ac.uk/biosciences/about/equality-diversity-and-inclusion/athena-swan-biosciences}{UCL Biosciences Athena SWAN Self-Assessment Team} (from 2025 on)}\\\\
+     
+\Large{\faIcon{bullhorn}} & \textcolor{teal}{\textbf{OUTREACH}} \\\vspace{-6pt}  
+     & \\
+     & \textbf{Co-organisation of \href{https://www.qmul.ac.uk/eizaguirrelab/turtle-project/wild-live-streaming/}{“Wild-Life Streaming”} (2022)}\\
+     & \parbox{7.0in}{visit to UK schools to help students discover the work of international conservation NGOs and explore career pathways in biodiversity conservation} \\\vspace{-6pt}
+      & \\
+     & \textbf{Science Slam Berlin, (Germany) (2019 \& 2020)}\\
+     & \parbox{7.0in}{Shared winner of \#75 in 2020 (\href{https://www.youtube.com/watch?v=xc3TqjdTCio}{youtube video link})} \\\vspace{-6pt}
+      &\\
+\Large{\faIcon{comment}} & \textcolor{teal}{\textbf{INVITED PRESENTATIONS}} \\\vspace{-6pt}  
+     & \\
+     & \textbf{Wilhelminenberg Seminar Talk serie, Research Institute of Wildlife Ecology, University of Veterinary Medicine Vienna (Austria)(2025)}\\
+     & Talk: Understanding the role of methylation in adaptive response to environmental pressures \\\vspace{-6pt} 
+     & \\
+     & \textbf{Epigenetics for wildlife research workshop, Norwegian Institute for Nature Research (Norway)(2025}\\
+     & Talk: An epigenetic toolbox for conservation biologists \\\vspace{-6pt} 
+     & \\
+     \Large{\faIcon{newspaper}} & \textcolor{teal}{\textbf{PUBLICATIONS}} \\\vspace{-18pt}  
+\end{tabular}
+
+     \begin{enumerate}
+
+      \item Helmkampf, M., Coulmance, F., Heckwolf, M. J., Acero, A., \textbf{Balard A.}, Bista, I., Dominguez Dominguez O., Frandsen, P. B., IKMB, Santaquiteria, A., Tavera, J., Victor, B., Robertson, R., Betancur, R., McMillan, W. O., Puebla, O. (2025) Radiation with reproductive isolation in the near-absence of phylogenetic signal. \textit{Science advances}. doi: \href{https://doi.org/10.1126/sciadv.adt0973}{10.1126/sciadv.adt0973}
+
+     \item Yen, E. C., Gilbert J. D., \textbf{Balard, A.}, Taxonera, A., Fairweather, K., Ford, H. L., Thorburn, D.-M. J., Rossiter,  S. J., Martin-Duran, J. M., Eizaguirre, C. (2025) Chromosome-level genome assembly and methylome profile enables insights for the conservation of endangered loggerhead sea turtles. \textit{Gigascience}. doi: \href{https://doi.org/10.1093/gigascience/giaf054}{10.1093/gigascience/giaf054}
+
+     \item \textbf{Balard A.}, Baltazar-Soares, M., Eizaguirre, C., Heckwolf, M. J. (2024). An epigenetic toolbox for conservation biologists. \textit{Evolutionary Applications}. doi: \href{https://doi.org/10.1111/eva.13699}{10.1111/eva.13699}
+
+     \item Baltazar-Soares, M., \textbf{Balard A.}, Heckwolf, M. J. (2024). Epigenetic diversity and the evolutionary potential of wild populations. \textit{Evolutionary Applications}. doi: \href{ https://doi.org/10.1111/eva.70011}{10.1111/eva.70011}
+
+     \item Yen, E., Gilbert, J., \textbf{Balard A.}, Afonso, I., Fairweather, K., Newlands, D., Lopes, A., Correia, S., Taxonera, A., Rossiter, S., Martín‑Durán, J., Eizaguirre, C. (2024) DNA methylation carries signatures of sublethal effects under thermal stress in loggerhead sea turtles. \textit{Evolutionary Applications}. doi: \href{https://doi.org/10.1101/2023.11.22.568239}{10.1101/2023.11.22.568239}   
+      
+     \item Jarquín-Díaz, V. H., Ferreira, S. C. M., \textbf{Balard A.}, Ďureje, Ľ., Macholán, M., Piálek, J., Bengtsson-Palme J., Kramer-Schadt, S., Forslund, S. K., Heitlinger, E. (2024). Aberrant microbiomes are associated with increased antibiotic resistance gene load in hybrid mice. \textit{ISME Communication}. doi: \href{https://apps.crossref.org/pendingpub/pendingpub.html?doi=10.1093%2Fismeco%2Fycae053}{10.1093/ismeco/ycae053}
+     
+     \item \textbf{Balard A.}, \& Heitlinger, E. (2022) Shifting focus from resistance to disease tolerance: a review on hybrid house mice. \textit{Ecology and Evolution}. doi: \href{https://doi.org/10.1002/ece3.8889}{10.1002/ece3.8889}
+     
+     \item Jarquín-Díaz, V. H., \textbf{Balard A.}, Ferreira, S. C. M., Mittné V., Murata J. M., Heitlinger E. (2022) DNA-based quantification and counting of transmission stages provides different but complementary parasite load estimates: an example from rodent coccidia (\textit{Eimeria}). \textit{Parasites \& Vectors}. doi: \href{https://doi.org/10.1186/s13071-021-05119-0}{10.1186/s13071-021-05119-0}
+     
+    \item \textbf{Balard A.}, Jarquín-Díaz, V. H., Jost, J., Mittné, V., Böhning, F., Ďureje, Ľ., Piálek, J., Heitlinger, E. (2020) Coupling between tolerance and resistance for two related \textit{Eimeria} parasite species. \textit{Ecology \& Evolution}. doi: \href{https://doi.org/10.1002/ece3.6986}{10.1002/ece3.6986}
+
+     \item  Jarquín-Díaz, V. H., \textbf{Balard A.}, Mácová, A., Jost, J., Roth von Szepesbéla, T., Berktold, K., Tank, S., Kvičerová, J., Heitlinger, E. (2020) Generalist \textit{Eimeria} species in rodents: multilocus analyses indicate inadequate resolution of established markers. \textit{Ecology \& Evolution}. doi: \href{https://doi.org/10.1002/ece3.5992}{10.1002/ece3.5992}
+
+    \item  \textbf{Balard A.}, Jarquín-Díaz, V. H., Jost, J., Martincová, I., Ďureje, Ľ., Piálek, J., Macholán, M., Goüy de Bellocq, J., Baird, S. J. E., Heitlinger, E. (2019) Intensity of infection with intracellular \textit{Eimeria} spp. and pinworms is reduced in hybrid mice compared to parental subspecies. \textit{Journal of Evolutionary Biology}. doi: \href{https://doi.org/10.1111/jeb.13578}{10.1111/jeb.13578}
+
+    \item   Jarquín-Díaz, V. H., \textbf{Balard A.}, Jost, J., Kraft, J., Dikmen, M. N., Kvičerová, J., Heitlinger, E. (2019) Detection and quantification of house mouse \textit{Eimeria} at the species level–challenges and solutions for the assessment of Coccidia in wildlife. \textit{Int J Parasitol Parasites Wildl}. doi: \href{https://doi.org/10.1016/j.ijppaw.2019.07.004}{10.1016/j.ijppaw.2019.07.004}
+
+    \item   Bredtmann, C. M., Krücken, J., Murugaiyan, J, \textbf{Balard A.}, Hofer, H., Kuzmina, T. A., von Samson-Himmelstjerna, G. (2019) Concurrent proteomic fingerprinting and molecular analysis of cyathostomins. \textit{Proteomics}. doi: \href{https://doi.org/10.1002/pmic.201800290}{10.1002/pmic.201800290}
+     
+     \end{enumerate}
+   
+\noindent \begin{tabular}{@{} l p{0.95\linewidth}}
+\Large{\faIcon{pen-nib}} & \textcolor{teal}{\textbf{ARTICLE IN PREPARATION}} \\\vspace{-18pt} 
+\end{tabular}
+
+\begin{itemize}
+
+\item \textbf{Balard A.} \& Strassert J. F. H., Wolinska J., Martinez Ruiz E. Herbicide metolachlor alters gene expression and influences the interaction between a bloom-forming cyanobacterium and its chytrid parasite. biorxiv. doi: \href{https://doi.org/10.1101/2025.10.07.680865}{10.1101/2025.10.07.680865} Submitted to ISME
+
+\item \textbf{Balard A.}, Sagonas, K., Kaufmann, J., Heckwolf, M. J., Eizaguirre, C. DNA methylation provides a molecular basis for disease tolerance and intergenerational paternal effects. in prep 
+
+\item Lee J.* \& \textbf{Balard A.*}, Lacerda E., Gilbert J., Kingdon C., Abken E., Dockrell H., Cliff J., Nacul L. Immunilogical markers of chronic fatigue. in prep
+\end{itemize}
+
+\end{document}
+
