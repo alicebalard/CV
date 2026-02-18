@@ -1,17 +1,29 @@
 %%%%%%%%%%%%%%%%% PREAMBLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Change the font size of your document - 10pt, 12.1pt, etc.
 \documentclass[letterpaper,11pt,oneside]{article}
 
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Termes} % or Heros, Pagella, Schola, Adventor …
+
 \usepackage[czech,english]{babel}
 
-\usepackage{setspace}
 \usepackage{hyperref}
-\usepackage{fontawesome5} %for cool icons
+\usepackage{tcolorbox}
 \usepackage{multicol}
-\usepackage[skins]{tcolorbox}
+\usepackage{graphicx}
+\usepackage{geometry}
+\pagenumbering{gobble} %Changes the page numbers - {arabic}=arabic numerals, {gobble}=no page numbers, {roman}=Roman numerals
+
+
+%\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
+%\usepackage{lmodern}
+%\usepackage[czech,english]{babel}
+
+%\usepackage{setspace}
+%\usepackage{hyperref} %THERE
+%\usepackage{fontawesome5} %for cool icons
+% \usepackage{multicol} % THERE
+% \usepackage[skins]{tcolorbox}
 
 \hypersetup{
     colorlinks=true,
@@ -20,12 +32,11 @@
     urlcolor=blue,
     }
 
-\usepackage{graphicx}
-\graphicspath{ {images/}} % if many images needed, in this folder. So far just one in main.
+%\usepackage{graphicx}
+%\graphicspath{ {images/}} % if many images needed, in this folder. So far just one in main.
 \usepackage[left=.5in, right=.5in, bottom=.1in, top=.4in]{geometry} % change the margins
 
-%Changes the page numbers - {arabic}=arabic numerals, {gobble}=no page numbers, {roman}=Roman numerals
-\pagenumbering{gobble}
+%\pagenumbering{gobble} THERE
 
 %%%%%%%%%%%%%%%%% END OF PREAMBLE %%%%%%%%%%%%%%%%%%%%%
 
