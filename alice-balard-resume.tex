@@ -2,22 +2,26 @@
 \documentclass[letterpaper,11pt,oneside]{article}
 
 \usepackage{fontspec}
-\setmainfont{TeX Gyre Termes} % or Heros, Pagella, Schola, Adventor …
+\setmainfont{Source Sans Pro}
+
 \usepackage[czech,english]{babel}
+
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
-    filecolor=magenta,      
+    filecolor=magenta,
     urlcolor=blue,
-    }
+}
+
 \usepackage{tcolorbox}
+\tcbuselibrary{skins, breakable} % adds compatibility for the options you use
+
 \usepackage{multicol}
 \usepackage{graphicx}
-\usepackage[left=.5in, right=.5in, bottom=.1in, top=.4in]{geometry} % change the margins
-\pagenumbering{gobble} %Changes the page numbers - {arabic}=arabic numerals, {gobble}=no page numbers, {roman}=Roman numerals
-\usepackage{fontspec}
-\setmainfont{Source Sans Pro}
+
+\usepackage[left=.5in, right=.5in, bottom=.1in, top=.4in]{geometry}
+\pagenumbering{gobble}
 %%%%%%%%%%%%%%%%% END OF PREAMBLE %%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
@@ -29,7 +33,7 @@
 
 %%%%%%%%%%%%%%%%% CONTACT INFORMATION %%%%%%%%%%%%%%%%%
 \begin{multicols}{2}
-  \begin{tcolorbox}[enhanced, width=\linewidth, left, size=fbox, 
+  \begin{tcolorbox}[width=\linewidth, left, size=fbox, 
                     fontupper=\large, drop shadow southwest, colback=teal!15!white]
     \textbf{Research fields and interests} \\
     Molecular ecology \& evolution \\
@@ -37,7 +41,7 @@
     \faIcon{dna} multi-omics
   \end{tcolorbox}
 
-  \begin{tcolorbox}[enhanced, width=\linewidth, left, size=fbox, 
+  \begin{tcolorbox}[width=\linewidth, left, size=fbox, 
                     fontupper=\large, drop shadow southwest, colback=teal!15!white]
     \faIcon{envelope} \href{mailto:alice.cam.balard@gmail.com}{alice.cam.balard@gmail.com} \\
     \faIcon{orcid} \href{https://orcid.org/0000-0002-0942-7479}{alice-balard-276b7974/}\\
@@ -49,7 +53,7 @@
   \end{tcolorbox}
 \end{multicols}
 
-  \begin{tcolorbox}[enhanced, width=\linewidth, left, size=fbox, 
+  \begin{tcolorbox}[width=\linewidth, left, size=fbox, 
                     fontupper=\large, drop shadow southwest, colback=teal!15!white]
     \textbf{\faIcon{laptop}} R: data management, statistical analysis, -omics; Shell (bash): -omics; \LaTeX \\
     \faIcon{language} French (fluent), English (fluent), German (B2)
