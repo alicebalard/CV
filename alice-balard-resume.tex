@@ -3,46 +3,26 @@
 
 \usepackage{fontspec}
 \setmainfont{TeX Gyre Termes} % or Heros, Pagella, Schola, Adventor …
-
 \usepackage[czech,english]{babel}
-
 \usepackage{hyperref}
-\usepackage{tcolorbox}
-\usepackage{multicol}
-\usepackage{graphicx}
-\usepackage{geometry}
-\pagenumbering{gobble} %Changes the page numbers - {arabic}=arabic numerals, {gobble}=no page numbers, {roman}=Roman numerals
-
-
-%\usepackage[utf8]{inputenc}
-%\usepackage[T1]{fontenc}
-%\usepackage{lmodern}
-%\usepackage[czech,english]{babel}
-
-%\usepackage{setspace}
-%\usepackage{hyperref} %THERE
-%\usepackage{fontawesome5} %for cool icons
-% \usepackage{multicol} % THERE
-% \usepackage[skins]{tcolorbox}
-
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
     filecolor=magenta,      
     urlcolor=blue,
     }
-
-%\usepackage{graphicx}
-%\graphicspath{ {images/}} % if many images needed, in this folder. So far just one in main.
+\usepackage{tcolorbox}
+\usepackage{multicol}
+\usepackage{graphicx}
 \usepackage[left=.5in, right=.5in, bottom=.1in, top=.4in]{geometry} % change the margins
-
-%\pagenumbering{gobble} THERE
-
+\pagenumbering{gobble} %Changes the page numbers - {arabic}=arabic numerals, {gobble}=no page numbers, {roman}=Roman numerals
+\usepackage{fontspec}
+\setmainfont{Source Sans Pro}
 %%%%%%%%%%%%%%%%% END OF PREAMBLE %%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
-%%%%%%%%%%%%%%%%% NAME OF APPLICANT %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% NAME %%%%%%%%%%%%%%%%%%%
 \noindent  \Large{\textbf{Alice BALARD, PhD, DVM}} \\
 \vspace{-3ex} 
 \normalsize
@@ -78,8 +58,6 @@
 \vspace{.1em}
 
 %%%%%%%%%%%%%%%%% MAIN BODY %%%%%%%%%%%%%%%%%%%%%%%%%%%
-% The main body is contained in a tabular environment. To move sections onto the next page, simply end the tabular environment and begin a new tabular environment.
-
 \noindent \begin{tabular}{@{} l p{0.95\linewidth}}
 
 \Large{\faIcon{briefcase}}    & \textcolor{teal}{\textbf{PROFESSIONAL EXPERIENCE}} \\\vspace{-6pt}
